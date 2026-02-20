@@ -6,7 +6,7 @@ const productos = [
     referencia: "VP-001",
     descripcion: "De uso cotidiano facial y corporal, este jabón polivalente es apto para todo tipo de pieles, incluso las más sensibles y delicadas. Recomendado en afecciones cutáneas. Muy recomendado también para la higiene de la zona íntima.",
     precio: 17.55,
-    imagen: "Archivos/imagenes/Productos/producto1.png",
+    imagen: "/Archivos/imagenes/Productos/producto1.png",
     categoria: "Vitalidad",
     stock: 40,
     envio: "Envío gratis a partir de 50 €",
