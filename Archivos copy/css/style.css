@@ -1,0 +1,1668 @@
+/* =====================================================
+   ESTILOS GLOBALES - TODAS LAS PÁGINAS
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #fdfdfd;
+    color: #1a1a1a;
+    line-height: 1.65;
+}
+
+/* Tipografía global */
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #111111;
+}
+
+h1 {
+    font-size: 3.2rem;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1.8rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.9rem;
+}
+
+p,
+li,
+.referencia,
+.iva,
+.envio-info,
+.stock {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333333;
+}
+
+.precio {
+    font-size: 1.65rem !important;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #c9a347;
+}
+
+.referencia,
+.iva,
+.envio-info {
+    font-size: 0.92rem;
+    color: #666666;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.letra {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #fff;
+    color: #777;
+    border-top: 1px solid #eee;
+}
+
+/* =====================================================
+   BARRA DE NAVEGACIÓN - TODAS LAS PÁGINAS
+   ===================================================== */
+
+.barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    height: 70px;
+    z-index: 1000;
+}
+
+.barra a {
+    color: #333;
+    text-decoration: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ff6200;
+}
+
+.logo-img {
+    height: 36px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2.2rem;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-menu li a.letra {
+    position: relative;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-menu li a.letra,
+.nav-menu li a.letra:hover,
+.nav-menu li a.letra.activo {
+    color: #333 !important;
+}
+
+.nav-menu li a.letra::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    bottom: -8px;
+    left: 0;
+    background-color: #ff6200;
+    transition: width 0.35s ease;
+}
+
+.nav-menu li a.letra:hover::after,
+.nav-menu li a.letra.activo::after {
+    width: 100%;
+}
+
+.cart-icon {
+    position: relative;
+    color: #333;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.cart-icon,
+.cart-icon i {
+    color: #333;
+    transition: color 0.25s ease;
+}
+
+.cart-icon:hover,
+.cart-icon.activo,
+.cart-icon:hover i,
+.cart-icon.activo i {
+    color: #ff6200 !important;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff6200;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    min-width: 18px;
+    text-align: center;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #333;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block !important;
+    }
+
+    .nav-menu {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex !important;
+    }
+
+    .nav-menu {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-menu li a.letra::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+    }
+
+    .nav-menu li a.letra:hover::after,
+    .nav-menu li a.letra.activo::after {
+        width: 70%;
+    }
+
+    .cart-icon {
+        font-size: 1.7rem;
+    }
+
+    .nav-menu li {
+        margin: 0.6rem 0;
+    }
+
+    .nav-menu li a {
+        font-size: 1.25rem;
+        padding: 0.6rem 0;
+        display: block;
+    }
+
+    .nav-right {
+        gap: 1rem;
+    }
+
+    .barra {
+        padding: 0 5%;
+    }
+
+    .logo-img {
+        height: 32px;
+    }
+}
+
+/* =====================================================
+   PÁGINA INDEX.HTML
+   ===================================================== */
+
+.hero {
+    text-align: center;
+    padding: 140px 5% 80px;
+    background: linear-gradient(135deg, #fffaf0 0%, #fff 100%);
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.btn.principal {
+    display: inline-block;
+    padding: 1rem 2.2rem;
+    background: #ff6200;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn.principal:hover {
+    background: #e65100;
+}
+
+/* Sección Top Ventas */
+.top-ventas {
+    padding: 0 5% 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.top-ventas h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    color: #222;
+}
+
+.grid-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.grid-top .card.producto,
+.grid-top .card.producto * {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
+
+.grid-top .imagen-contenedor,
+.grid-top .imagen-contenedor img {
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+/* Galería con Swiper */
+.gallery-section {
+    padding: 4rem 1rem;
+    background: #f9f7f4;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+.gallery-section .subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+.myGallerySwiper {
+    width: 100%;
+    height: 520px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.swiper-slide {
+    position: relative;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    white-space: nowrap;
+    max-width: 90%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important;
+    background: rgba(196, 139, 111, 0.7) !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 1.5rem !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #c48b6f !important;
+}
+
+/* =====================================================
+   PÁGINA TIENDA.HTML - GRID DE PRODUCTOS
+   ===================================================== */
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 5% 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card.producto {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.22s ease;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.card.producto:hover {
+    transform: translateY(-6px);
+    box-shadow: none;
+}
+
+.imagen-contenedor {
+    height: 240px;
+    overflow: hidden;
+    border: none;
+}
+
+.imagen-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+    border: none;
+}
+
+.card.producto:hover .imagen-contenedor img {
+    transform: scale(1.05);
+}
+
+.info {
+    padding: 1.3rem;
+}
+
+h3 a,
+.imagen-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.precio-block {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 0.8rem 0 1.2rem;
+}
+
+.iva {
+    color: #888;
+    font-size: 0.95rem;
+    text-decoration: none !important;
+}
+
+.btn-add {
+    width: 100%;
+    padding: 0.9rem;
+    background: #ff6200;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-add:hover {
+    background: #e55a00;
+}
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 3rem 0 2rem;
+    flex-wrap: wrap;
+}
+
+.pagina-btn {
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.pagina-btn:hover:not(:disabled) {
+    background: #ff6200;
+}
+
+.pagina-btn.activo {
+    background: #c48b6f;
+    color: white;
+    border-color: #c48b6f;
+}
+
+.pagina-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.busqueda-container {
+    position: relative;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+.busqueda-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3.5rem;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.busqueda-input:focus {
+    outline: none;
+    border-color: #ff6200;
+    box-shadow: 0 0 0 3px rgba(255, 98, 0, 0.15);
+}
+
+.icono-busqueda {
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 1.3rem;
+}
+
+.filtros-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 5%;
+    justify-content: center;
+}
+
+.busqueda-wrapper,
+.categoria-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 220px;
+}
+
+.busqueda-input,
+.categoria-select {
+    width: 100%;
+    padding: 0.9rem 1rem 0.9rem 3.2rem;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.categoria-select {
+    padding-left: 1rem;
+    appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="gray"><polygon points="0,0 12,0 6,12"/></svg>') no-repeat right 1rem center;
+}
+
+.busqueda-input:focus,
+.categoria-select:focus {
+    outline: none;
+    border-color: #ff6200;
+    box-shadow: 0 0 0 3px rgba(255, 98, 0, 0.15);
+}
+
+.resultados-info {
+    margin: 0;
+    padding: 0.8rem 1.5rem;
+    background: #f8f9fa;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #555;
+    white-space: nowrap;
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    .filtros-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .resultados-info {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .grid-productos {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
+
+/* =====================================================
+   PÁGINA DETALLE.HTML
+   ===================================================== */
+
+#detalle-producto {
+    max-width: 1300px;
+    margin: 100px auto 80px;
+    padding: 0 5%;
+}
+
+.detalle-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    margin-bottom: 3.5rem;
+    align-items: start;
+}
+
+.detalle-container {
+    max-width: 1200px;
+    margin: 100px auto 60px;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+.galeria .principal {
+    object-fit: contain;
+}
+
+.galeria-detalle img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.info-detalle h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.info-compra h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-compra .referencia {
+    color: #666;
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+}
+
+.precio-block.grande .precio {
+    font-size: 2.8rem;
+}
+
+.precio-block.grande .precio {
+    font-size: 2.9rem;
+    color: #d4af37;
+}
+
+.stock.disponible {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.stock.disponible {
+    color: #1b5e20;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.stock.agotado {
+    color: #c62828;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.envio-info {
+    color: #555;
+    margin: 1rem 0 1.8rem;
+    font-size: 1.05rem;
+}
+
+.btn-add.grande {
+    font-size: 1.18rem;
+    padding: 1.1rem;
+    margin: 1.6rem 0 2.2rem;
+}
+
+.btn-add.grande {
+    font-size: 1.2rem;
+    padding: 1.2rem 2rem;
+    background: #ff6200;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.btn-add.grande:hover {
+    background: #e65100;
+}
+
+.descripcion,
+.caracteristicas {
+    margin: 2rem 0;
+}
+
+.descripcion-completa,
+.caracteristicas {
+    margin-bottom: 2.8rem;
+}
+
+.descripcion-completa h3,
+.caracteristicas h3 {
+    font-size: 1.45rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.caracteristicas ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.caracteristicas ul {
+    padding-left: 1.5rem;
+    line-height: 1.7;
+}
+
+.caracteristicas li {
+    margin-bottom: 0.7rem;
+}
+
+.caracteristicas li {
+    margin-bottom: 0.9rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    background: #ff6200;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn.secundario {
+    background: #eee;
+    color: #333;
+}
+
+.info-adicional {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.error-centrado {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.error {
+    text-align: center;
+    padding: 6rem 1rem;
+}
+
+@media (max-width: 968px) {
+    .detalle-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .info-compra h1 {
+        font-size: 2.1rem;
+    }
+
+    .precio-block.grande .precio {
+        font-size: 2.4rem;
+    }
+
+    .btn-add.grande {
+        margin-top: 1rem;
+    }
+
+    .detalle-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.centrar {
+    text-align: center;
+}
+
+/* =====================================================
+   PÁGINA CARRITO.HTML
+   ===================================================== */
+
+.carrito-main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.carrito-header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+.articulos-info {
+    color: #555;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.carrito-vacio {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    margin: 2rem 0;
+}
+
+.carrito-vacio i {
+    font-size: 4rem;
+    color: #bdc3c7;
+    margin-bottom: 1rem;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.8rem;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 1.2rem 1rem;
+    text-align: left;
+}
+
+.cart-table th {
+    background: #f1f5f9;
+    font-weight: 600;
+    color: #475569;
+}
+
+.cart-table tr {
+    background: white;
+}
+
+.cart-table td {
+    vertical-align: middle;
+}
+
+.producto-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.producto-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.cantidad-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cantidad-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cantidad-display {
+    width: 50px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+}
+
+.resumen-compra {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.fila-resumen {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.fila-resumen:last-child {
+    border-bottom: none;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+}
+
+.fila-resumen.total {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.total-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    text-align: right;
+}
+
+.total-section h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
+}
+
+.total-final {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.acciones-carrito {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.btn-primario {
+    background: #ff6200;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primario:hover {
+    background: #e65100;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #444;
+    color: #444;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    text-decoration: none;
+}
+
+.aviso-seguridad {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .cart-table {
+        font-size: 0.95rem;
+    }
+
+    .producto-info img {
+        width: 60px;
+    }
+
+    .acciones-carrito {
+        flex-direction: column;
+    }
+
+    .btn-primario,
+    .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cart-table {
+        display: block;
+    }
+
+    .cart-table thead {
+        display: none;
+    }
+
+    .cart-table tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+    }
+
+    .cart-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .cart-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #64748b;
+    }
+
+    .cart-table td:last-child {
+        border-bottom: none;
+    }
+}
+
+/* =====================================================
+   PÁGINAS DE TRATAMIENTOS
+   (tratamientos.html, tratamientos de belleza.html,
+    tratamientos de cuerpo.html, tratamientos holísticos.html)
+   ===================================================== */
+
+.tratamiento-grid {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 70vh;
+    background: #fff;
+}
+
+.tratamiento-imagen,
+.tratamiento-texto {
+    flex: 1 1 50%;
+    min-height: 70vh;
+}
+
+.imagen-izq {
+    order: 1;
+}
+
+.texto-der {
+    order: 2;
+}
+
+.imagen-der {
+    order: 2;
+}
+
+.texto-izq {
+    order: 1;
+}
+
+.tratamiento-imagen {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f6f2;
+}
+
+.tratamiento-imagen img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+.tratamiento-texto {
+    padding: 6rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-mas-info {
+    display: inline-block;
+    margin-top: 2.5rem;
+    font-size: 1rem;
+    color: #c9a347;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.btn-mas-info:hover {
+    color: #a88a3a;
+}
+
+@media (max-width: 1024px) {
+    .tratamiento-grid {
+        flex-direction: column;
+    }
+
+    .tratamiento-imagen,
+    .tratamiento-texto {
+        flex: 0 0 100%;
+        order: initial !important;
+        min-height: auto;
+    }
+
+    .tratamiento-grid .tratamiento-imagen {
+        order: -1 !important;
+    }
+
+    .tratamiento-grid .tratamiento-texto {
+        order: 1 !important;
+    }
+
+    .tratamiento-imagen {
+        min-height: 45vh;
+        padding: 1.5rem 5%;
+    }
+
+    .tratamiento-texto {
+        padding: 3rem 6% 4rem;
+        text-align: center;
+    }
+
+    .tratamiento-texto h1 {
+        font-size: 2.1rem;
+    }
+
+    .tratamiento-texto h2 {
+        font-size: 1.4rem;
+    }
+
+    .tratamiento-texto ul {
+        text-align: left;
+        max-width: 480px;
+        margin: 1.5rem auto;
+    }
+}
+
+/* Página de inicio de tratamientos */
+.centro-pantalla {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 70vh;
+}
+
+.contenido-centrado {
+    text-align: center;
+    width: 100%;
+    max-width: 520px;
+    padding: 1.5rem;
+}
+
+.intro-text h1 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2.8rem;
+}
+
+.botones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.btn-profesional {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    width: 100%;
+    padding: 1.45rem 2.2rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff6200 0%, #e65100 100%);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 18px rgba(255, 98, 0, 0.22);
+    text-decoration: none !important;
+}
+
+.btn-profesional:link,
+.btn-profesional:visited,
+.btn-profesional:hover,
+.btn-profesional:active {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.btn-profesional:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(255, 98, 0, 0.32);
+    background: linear-gradient(135deg, #ff751a 0%, #f05a00 100%);
+}
+
+.btn-profesional i {
+    font-size: 1.4rem;
+}
+
+@media (max-width: 640px) {
+    .intro-text h1 {
+        font-size: 2.1rem;
+    }
+
+    .btn-profesional {
+        font-size: 1.22rem;
+        padding: 1.3rem 1.8rem;
+    }
+}
+
+/* =====================================================
+   PÁGINA CONTACTO.HTML
+   ===================================================== */
+
+.contacto-main {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.contacto-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contacto-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.contacto-hero p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.contacto-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.form-contacto .form-group {
+    margin-bottom: 1.6rem;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-contacto textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contacto-info {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.8rem;
+}
+
+.info-item i {
+    font-size: 1.8rem;
+    color: #ff6200;
+    margin-right: 1.2rem;
+    margin-top: 0.3rem;
+}
+
+.redes-sociales {
+    margin-top: 2rem;
+}
+
+.iconos-redes {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.iconos-redes a {
+    font-size: 1.8rem;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.iconos-redes a:hover {
+    color: #ff6200;
+}
+
+@media (max-width: 968px) {
+    .contacto-contenido {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+/* =====================================================
+   PÁGINA CHECKOUT.HTML Y FORMULARIOS
+   ===================================================== */
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff6200;
+}
+
+.form-group input:invalid:focus {
+    border-color: #c62828;
+}
+
+.error-message {
+    color: #c62828;
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+    display: block;
+    min-height: 1.2rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form-row .half {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* Mensaje de éxito */
+.mensaje-exito {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.exito-icono {
+    font-size: 5.5rem;
+    color: #28a745;
+    margin-bottom: 1.5rem;
+    animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.exito-contenido h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.exito-texto {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.exito-resumen {
+    background: #e8f5e9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    font-size: 1.1rem;
+}
+
+.exito-resumen p {
+    margin: 0.8rem 0;
+}
+
+.exito-resumen strong {
+    color: #1b5e20;
+}
+
+.exito-detalle {
+    background: #e8f5e9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    font-size: 1.1rem;
+}
+
+.exito-acciones {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.exito-nota {
+    color: #777;
+    font-size: 0.95rem;
+    margin-top: 2rem;
+}
+
+.exito-nota i {
+    margin-right: 0.5rem;
+    color: #ff6200;
+}
+
+.confirmacion-botones .btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* =====================================================
+   COMPONENTES REUTILIZABLES
+   ===================================================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+
+/* =======================================================
+   RESUMEN DEL ARCHIVO - ORGANIZACIÓN POR PÁGINAS
+   =======================================================
+
+   1. ESTILOS GLOBALES (todas las páginas)
+      - Reset de márgenes y padding
+      - Tipografía base del sitio
+      - Colores principales
+      - Footer
+
+   2. BARRA DE NAVEGACIÓN (todas las páginas)
+      - Navegación sticky
+      - Logo y menú
+      - Carrito de compras
+      - Responsive móvil
+
+   3. INDEX.HTML
+      - Hero principal con gradiente
+      - Sección de top ventas
+      - Galería con Swiper
+      - Botones de llamada a acción
+
+   4. TIENDA.HTML
+      - Grid de productos
+      - Tarjetas de producto (card.producto)
+      - Búsqueda y filtros
+      - Paginación
+      - Sistema de categorías
+
+   5. DETALLE.HTML
+      - Layout de detalle de producto
+      - Galería principal del producto
+      - Precio y stock
+      - Botones de añadir al carrito
+      - Descripción y características
+
+   6. CARRITO.HTML
+      - Tabla de carrito
+      - Resumen de compra
+      - Acciones (checkout, limpiar)
+      - Botones de control de cantidad
+
+   7. CHECKOUT.HTML
+      - Formularios de checkout
+      - Mensajes de éxito
+      - Animaciones (fadeIn, bounceIn)
+      - Resumen de pedido
+
+   8. CONTACTO.HTML
+      - Formulario de contacto
+      - Información de contacto
+      - Redes sociales
+      - Layout 2 columnas
+
+   9. TRATAMIENTOS (tratamientos.html, belleza.html, cuerpo.html)
+      - Grid alternado imagen-texto
+      - Sección de inicio de tratamientos
+      - Botones profesionales con iconos
+      - Layout responsive
+
+   COLORES PRINCIPALES:
+   - Primario (naranja): #ff6200
+   - Dorado (precios): #d4af37 / #c9a347
+   - Texto: #1a1a1a / #333333
+   - Gris claro: #f9f9f9 / #fdfdfd
+
+   ======================================================= */
