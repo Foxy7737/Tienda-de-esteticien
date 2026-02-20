@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Estética M. Jose Vera</title>
+    <link rel="stylesheet" href="Archivos/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Archivos/Imagenes/icono.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <main class="checkout-main letra">
+        <h1>Finalizar compra</h1>
+
+        <div class="checkout-layout">
+            <!-- Columna izquierda: formulario de datos -->
+            <section class="checkout-form-section">
+                <h2>Datos de envío</h2>
+
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ej: Ana García López">
+                        <span class="error-message" id="error-nombre"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required placeholder="tuemail@ejemplo.com">
+                        <span class="error-message" id="error-email"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="+34 6XX XXX XXX">
+                        <span class="error-message" id="error-telefono"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccion">Dirección completa *</label>
+                        <input type="text" id="direccion" name="direccion" required
+                            placeholder="Calle Ejemplo 123, Piso 4A">
+                        <span class="error-message" id="error-direccion"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="ciudad">Ciudad *</label>
+                            <input type="text" id="ciudad" name="ciudad" required placeholder="Madrid">
+                            <span class="error-message" id="error-ciudad"></span>
+                        </div>
+                        <div class="form-group half">
+                            <label for="cp">Código postal *</label>
+                            <input type="text" id="cp" name="cp" required placeholder="28001">
+                            <span class="error-message" id="error-cp"></span>
+                        </div>
+                    </div>
+
+                    <h2>Método de envío</h2>
+                    <div class="envio-opciones">
+                        <label class="envio-label">
+                            <input type="radio" name="envio" value="estandar" checked>
+                            <span>Envío estándar (3–5 días laborables) — Gratis (pedidos > 50 €) / 5,90 €</span>
+                        </label><br>
+                        <label class="envio-label">
+                            <input type="radio" name="envio" value="express">
+                            <span>Envío express (24–48 h) — 9,90 €</span>
+                        </label>
+                    </div>
+
+                    <h2>Método de pago</h2>
+                    <div class="pago-opciones">
+                        <label class="pago-label">
+                            <input type="radio" name="pago" value="tarjeta" checked>
+                            <span>Tarjeta de crédito/débito</span>
+                        </label><br>
+                        <label class="pago-label">
+                            <input type="radio" name="pago" value="paypal">
+                            <span>PayPal</span>
+                        </label><br>
+                        <label class="pago-label">
+                            <input type="radio" name="pago" value="transferencia">
+                            <span>Transferencia bancaria</span>
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <a href="carrito.html" class="btn btn-outline">Volver al carrito</a>
+                        <button type="submit" class="btn btn-primario grande">
+                            Confirmar pedido →
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Columna derecha: resumen del pedido -->
+            <aside class="checkout-resumen">
+                <h2>Resumen del pedido</h2>
+                <div id="resumen-productos"></div>
+
+                <div class="resumen-totales">
+                    <div class="fila-total">
+                        <span>Subtotal</span>
+                        <span id="resumen-subtotal">0,00 €</span>
+                    </div>
+                    <div class="fila-total">
+                        <span>Envío</span>
+                        <span id="resumen-envio">0,00 €</span>
+                    </div>
+                    <div class="fila-total total">
+                        <strong>Total</strong>
+                        <strong id="resumen-total">0,00 €</strong>
+                    </div>
+                </div>
+
+                <p class="aviso-legal">
+                    Al confirmar el pedido aceptas nuestros <a href="#">Términos y condiciones</a> y <a
+                        href="#">Política de privacidad</a>.
+                </p>
+            </aside>
+        </div>
+
+        <!-- Mensaje de éxito (FUERA del checkout-layout para que no se oculte) -->
+        <div id="mensaje-exito" class="mensaje-exito" style="display: none;">
+            <div class="exito-contenido">
+                <div class="exito-icono">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>¡Pedido confirmado!</h2>
+                <p class="exito-texto">Gracias por confiar en Centro de Estética M. Jose Vera. Tu compra se ha procesado correctamente.</p>
+
+                <div class="exito-resumen">
+                    <p><strong>Número de pedido:</strong> <span id="numero-pedido">TM-XXXXXX</span></p>
+                    <p><strong>Total pagado:</strong> <span id="total-exito">0,00 €</span></p>
+                    <p>Te hemos enviado un email con todos los detalles y el seguimiento del envío.</p>
+                </div>
+
+                <div class="exito-acciones">
+                    <a href="index.html" class="btn btn-primario grande">Volver al inicio</a>
+                    <a href="Tienda.html" class="btn btn-outline">Seguir comprando</a>
+                </div>
+
+                <p class="exito-nota">
+                    <i class="fas fa-clock"></i> Recibirás tu pedido en 1–5 días laborables
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="letra">© 2025–2026 Centro de Estética M. Jose Vera · Todos los derechos reservados</p>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "Vq7Ow-hHd6zgZa8zj",   // ← cámbialo
+            });
+        })();
+    </script>
+    <script src="Archivos/script/productos.js"></script>
+    <script src="Archivos/script/checkout.js"></script>
+
+</body>
+
+</html>

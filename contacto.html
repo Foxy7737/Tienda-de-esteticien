@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centro de Estética M. Jose Vera</title>
+    <link rel="stylesheet" href="Archivos/css/style.css" />
+    <!-- Fuente consistente con el resto del sitio -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Archivos/Imagenes/icono.ico" type="image/x-icon">
+</head>
+
+<body>
+    <br>
+    <main class="contacto-main letra">
+        <div class="contacto-hero">
+            <h1>Contacto</h1>
+            <p>Estamos aquí para ayudarte. Escríbenos y te responderemos lo antes posible.</p>
+        </div>
+
+        <div class="contacto-contenido">
+            <!-- Columna izquierda: formulario -->
+            <section class="contacto-formulario">
+                <h2>Envíanos un mensaje</h2>
+
+                <form id="contacto-form"> <!-- Sin action ni method – el envío se maneja en JS -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                        <span class="error-message" id="error-nombre"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required placeholder="tuemail@ejemplo.com">
+                        <span class="error-message" id="error-email"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+34 6XX XXX XXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="asunto">Asunto *</label>
+                        <input type="text" id="asunto" name="asunto" required placeholder="Ej: Consulta sobre producto">
+                        <span class="error-message" id="error-asunto"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje *</label><br>
+                        <textarea id="mensaje" name="mensaje" rows="6" required
+                            placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+                        <span class="error-message" id="error-mensaje"></span>
+                    </div>
+
+                    <!-- Campo honeypot – invisible para humanos, los bots suelen marcarlo -->
+                    <div style="display: none;" aria-hidden="true">
+                        <input type="checkbox" id="botcheck" name="botcheck" tabindex="-1" autocomplete="off">
+                        <!-- Opcional: texto que solo verían los bots o lectores de pantalla mal configurados -->
+                        <label for="botcheck">No marques esta casilla si eres humano</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primario grande letra">
+                        Enviar mensaje <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Columna derecha: información de contacto -->
+            <aside class="contacto-info">
+                <h2>Información de contacto</h2>
+
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Teléfono</strong>
+                        <p>+34 666 39 38 56</p>
+                        <small>Lunes a viernes 9:00 - 18:00</small>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Dirección</strong>
+                        <p>Calle Golondrina 4<br>41600 Arahal, Sevilla</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Horario de atención</strong>
+                        <p>Lunes - Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 14:00</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Mensaje de éxito (oculto al inicio) -->
+        <div id="mensaje-exito-contacto" class="mensaje-exito" style="display: none;">
+            <div class="exito-contenido">
+                <div class="exito-icono">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>¡Mensaje enviado!</h2>
+                <p class="exito-texto">Gracias por contactarnos. Te responderemos lo antes posible.</p>
+
+                <div class="exito-detalle">
+                    <p>Hemos recibido tu consulta correctamente.</p>
+                    <p>En breve nos pondremos en contacto contigo por email o teléfono.</p>
+                </div>
+
+                <div class="exito-acciones">
+                    <a href="index.html" class="btn btn-primario grande">Volver al inicio</a>
+                    <a href="Tienda.html" class="btn btn-outline grande">Seguir explorando</a>
+                </div>
+
+                <p class="exito-nota">
+                    <i class="fas fa-clock"></i> Horario de respuesta: Lunes a viernes 9:00 - 18:00
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="letra">© 2025–2026 Centro de Estética M. Jose Vera · Todos los derechos reservados</p>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("-8jG393kLwLy9mAVb");  // ← tu User ID
+        })();
+    </script>
+    <script src="Archivos/script/script.js"></script>
+    <script src="Archivos/script/contacto.js"></script>
+
+</body>
+
+</html>

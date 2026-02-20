@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Estética M. Jose Vera</title>
+    <link rel="stylesheet" href="Archivos/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Archivos/Imagenes/icono.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header class="hero">
+        <h1 class="letra">Nuestros Productos</h1>
+        <p class="letra">Calidad • Envío rápido • Precios con IVA incluido</p>
+    </header>
+
+    <!-- FILTROS -->
+    <div class="filtros-container letra">
+        <div class="busqueda-wrapper">
+            <input type="text" id="busqueda-input" placeholder="Buscar por nombre..." class="busqueda-input">
+            <i class="fas fa-search icono-busqueda"></i>
+        </div>
+
+        <div class="categoria-wrapper">
+            <select id="categoria-select" class="categoria-select">
+                <option value="">Todas las categorías</option>
+            </select>
+        </div>
+
+        <p id="resultados-contador" class="resultados-info">
+            Cargando productos...
+        </p>
+    </div>
+
+    <div class="grid-productos letra" id="productos-grid"></div>
+
+    <!-- PAGINACIÓN -->
+    <div id="paginacion" class="paginacion letra"></div>
+
+    <footer>
+        <p class="letra">© 2025–2026 Centro de Estética M. Jose Vera · Todos los derechos reservados</p>
+    </footer>
+
+    <script src="Archivos/script/productos.js"></script>
+    <script src="Archivos/script/script.js"></script>
+
+</body>
+
+</html>

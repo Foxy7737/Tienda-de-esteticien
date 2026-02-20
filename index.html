@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Estética M. Jose Vera</title>
+    <link rel="stylesheet" href="Archivos/css/style.css">
+    <!-- Fuente consistente con el resto del sitio -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Archivos/Imagenes/icono.ico" type="image/x-icon">
+    <!-- CSS de Swiper -->
+    <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+    <section class="gallery-section">
+        <div class="container letra">
+            <h2>Nuestro centro de estética</h2>
+            <p class="subtitle">Un espacio dedicado al cuidado natural y al bienestar</p>
+        </div>
+
+        <!-- Carrusel Swiper -->
+        <div class="swiper myGallerySwiper">
+            <div class="swiper-wrapper">
+
+                <!-- Foto 1: Fachada o entrada -->
+                <div class="swiper-slide">
+                    <img src="Archivos/Imagenes/centro/espera.JPG" alt="Entrada del Centro de Estética M. Jose Vera">
+                    <div class="slide-caption">Nuestra Sala de Espera</div>
+                </div>
+
+                <!-- Foto 2: Sala de tratamientos -->
+                <div class="swiper-slide">
+                    <img src="Archivos/Imagenes/centro/pasillo.JPG"
+                        alt="Sala de tratamientos faciales y corporales">
+                    <div class="slide-caption">Nuestro Pasillo</div>
+                </div>
+
+                <!-- Foto 3: Zona de productos -->
+                <div class="swiper-slide">
+                    <img src="Archivos/Imagenes/centro/npg.JPG"
+                        alt="Nuestra selección de productos naturales">
+                    <div class="slide-caption">Nuestro NPG Roll de aparatologia manos libres</div>
+                </div>
+
+                <!-- Foto 4: Detalle (manos, cabina, decoración, etc.) -->
+                <div class="swiper-slide">
+                    <img src="Archivos/Imagenes/centro/preso.JPG" alt="Cabina de tratamientos personalizados">
+                    <div class="slide-caption">Nuestra Presoterapia de aparatología manos libres</div>
+                </div>
+
+                <!-- Foto 5: Equipo o ambiente general -->
+                <div class="swiper-slide">
+                    <img src="Archivos/Imagenes/centro/bronceado.JPG" alt="Espacio acogedor y relajante">
+                    <div class="slide-caption">Nuestra maquina de bronceado</div>
+                </div>
+
+                <!--Foto 6-->
+                <div class="swiper-slide">
+                    <img src="Archivos/Imagenes/centro/masaje.JPG">
+                    <div class="slide-caption">Nuestra sala de masaje</div>
+                </div>
+
+                <!--Foto 7-->
+                <div class="swiper-slide">
+                    <img src="Archivos/Imagenes/centro/masaje2.JPG">
+                    <div class="slide-caption">Nuestra segunda sala de masaje</div>
+                </div>
+
+                <!--Foto 8-->
+                <div class="swiper-slide">
+                    <img src="Archivos/Imagenes/centro/camilla.JPG">
+                    <div class="slide-caption">Nuestra camilla</div>
+                </div>
+
+                <!--Foto 9-->
+                <div class="swiper-slide">
+                    <img src="Archivos/Imagenes/centro/especialista.JPG">
+                    <div class="slide-caption">Nuestra especialista</div>
+                </div>
+
+
+            </div>
+
+            <!-- Flechas -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Puntos -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Sección Top Ventas -->
+    <section class="top-ventas">
+        <h2 class="letra">Top Ventas</h2>
+
+        <div class="grid-top">
+            <!-- Producto 1 -->
+            <a href="detalle.html?id=3" class="card producto">
+                <div class="imagen-contenedor">
+                    <img src="Archivos/Imagenes/Productos/producto3.png" alt="Gold Micellar Lotion" loading="lazy">
+                </div>
+                <div class="info">
+                    <h3 class="letra">Tónico Facial Calmante Libre de Alcohol</h3>
+                    <p class="precio letra">15,90 €</p>
+                    <span class="iva letra">IVA incluido</span>
+                </div>
+            </a>
+
+            <!-- Producto 2 -->
+            <a href="detalle.html?id=13" class="card producto">
+                <div class="imagen-contenedor">
+                    <img src="Archivos/Imagenes/Productos/producto13.png" alt="Gold Micellar Lotion" loading="lazy">
+                </div>
+                <div class="info">
+                    <h3 class="letra">Jabón Natural de Azufre de Máxima Pureza</h3>
+                    <p class="precio letra">19,10 €</p>
+                    <span class="iva letra">IVA incluido</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p class="letra">© 2025–2026 Centro de Estética M. Jose Vera · Todos los derechos reservados</p>
+    </footer>
+
+    <!-- JS de Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="Archivos/script/script.js"></script>
+    <script src="Archivos/script/carrucel.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Estética M. Jose Vera</title>
+    <link rel="stylesheet" href="Archivos/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="Archivos/Imagenes/icono.ico" type="image/x-icon">
+</head>
+
+<body>
+    <br><br>
+    <main class="carrito-main letra">
+        <div class="carrito-header">
+            <h1>Tu Carrito</h1>
+            <p id="articulos-total" class="articulos-info"></p>
+        </div>
+
+        <div id="carrito-contenido"></div>
+
+        <div class="total-section" id="total-section" style="display:none;">
+            <div class="resumen-compra">
+                <div class="fila-resumen">
+                    <span>Subtotal</span>
+                    <span id="subtotal">0.00 €</span>
+                </div>
+                <div class="fila-resumen envio">
+                    <span>Envío</span>
+                    <span>Calculado en el siguiente paso</span>
+                </div>
+                <div class="fila-resumen total">
+                    <strong>Total (IVA incl.)</strong>
+                    <strong id="total-final">0.00 €</strong>
+                </div>
+            </div>
+
+            <div class="acciones-carrito">
+                <a href="Tienda.html" class="btn btn-outline">Seguir comprando</a>
+                <button id="finalizar-compra" class="btn btn-primario">
+                    Finalizar compra →
+                </button>
+            </div>
+
+            <p class="aviso-seguridad">
+                <i class="fas fa-lock"></i> Compra 100% segura – Pago protegido
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p class="letra">© 2025–2026 Centro de Estética M. Jose Vera · Todos los derechos reservados</p>
+    </footer>
+
+    <script src="Archivos/script/script.js"></script>
+
+</body>
+
+</html>
